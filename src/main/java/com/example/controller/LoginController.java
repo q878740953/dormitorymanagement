@@ -21,9 +21,18 @@ public class LoginController {
     }
 
     @GetMapping({"/index", "/"})
+    public String index(){
+        return "index";
+    }
+
+    @GetMapping("/test")
     @ResponseBody
-    public Users index(){
-        Users admin = usersMapper.findUserByUsername("admin");
-        return admin;
+    public String test(){
+        return "测试";
+    }
+
+    @GetMapping("/page/welcome")
+    public String welcome(){
+        return "page/welcome";
     }
 }
